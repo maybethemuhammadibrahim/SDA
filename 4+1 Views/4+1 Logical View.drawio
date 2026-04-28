@@ -1,0 +1,199 @@
+<mxfile host="app.diagrams.net" agent="draw.io">
+  <diagram id="logical-view" name="4+1 Logical View">
+    <mxGraphModel dx="1800" dy="1050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Helvetica;fontColor=#1a1a2e;" value="Smart Campus Hub — 4+1 Logical View" vertex="1">
+          <mxGeometry x="400" y="10" width="500" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ AUTH SUBSYSTEM ═══ -->
+        <mxCell id="auth_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;AuthSubsystem" vertex="1">
+          <mxGeometry x="30" y="80" width="220" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_cls" parent="auth_pkg" style="swimlane;fontStyle=1;align=center;startSize=26;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#82b366;" value="User" vertex="1">
+          <mxGeometry x="15" y="45" width="190" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_attrs" parent="user_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="user_id : INT «PK»&#xa;username : VARCHAR&#xa;password : VARCHAR (bcrypt)&#xa;role : ENUM&#xa;is_active : BOOLEAN" vertex="1">
+          <mxGeometry y="26" width="190" height="94" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ STUDENT SUBSYSTEM ═══ -->
+        <mxCell id="student_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;StudentSubsystem" vertex="1">
+          <mxGeometry x="30" y="310" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="student_cls" parent="student_pkg" style="swimlane;fontStyle=1;align=center;startSize=26;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#6c8ebf;" value="Student «extends User»" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="student_attrs" parent="student_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="student_id : INT «PK»&#xa;first_name, last_name&#xa;email, dob, program&#xa;batch_year" vertex="1">
+          <mxGeometry y="26" width="190" height="69" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ FACULTY SUBSYSTEM ═══ -->
+        <mxCell id="faculty_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;FacultySubsystem" vertex="1">
+          <mxGeometry x="30" y="510" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="faculty_cls" parent="faculty_pkg" style="swimlane;fontStyle=1;align=center;startSize=26;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#9673a6;" value="Faculty «extends User»" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="faculty_attrs" parent="faculty_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="faculty_id : INT «PK»&#xa;first_name, last_name&#xa;email, department&#xa;designation" vertex="1">
+          <mxGeometry y="26" width="190" height="69" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ ACADEMIC SUBSYSTEM ═══ -->
+        <mxCell id="academic_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;tabWidth=130;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;AcademicSubsystem" vertex="1">
+          <mxGeometry x="370" y="80" width="450" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="course_cls" parent="academic_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#d6b656;" value="Course" vertex="1">
+          <mxGeometry x="15" y="40" width="130" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="course_a" parent="course_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="course_id «PK»&#xa;course_code, credit_hours" vertex="1">
+          <mxGeometry y="22" width="130" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="semester_cls" parent="academic_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#d6b656;" value="Semester" vertex="1">
+          <mxGeometry x="160" y="40" width="130" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="semester_a" parent="semester_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="semester_id «PK»&#xa;name, start/end_date" vertex="1">
+          <mxGeometry y="22" width="130" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="section_cls" parent="academic_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#d6b656;" value="CourseSection" vertex="1">
+          <mxGeometry x="305" y="40" width="130" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="section_a" parent="section_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="section_id «PK»&#xa;section_code, max_capacity" vertex="1">
+          <mxGeometry y="22" width="130" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="enrollment_cls" parent="academic_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#d6b656;" value="Enrollment" vertex="1">
+          <mxGeometry x="100" y="150" width="170" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="enrollment_a" parent="enrollment_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="enrollment_id «PK»&#xa;status: ENUM&#xa;UNIQUE(student_id, section_id)" vertex="1">
+          <mxGeometry y="22" width="170" height="68" as="geometry"/>
+        </mxCell>
+        <!-- internal links -->
+        <mxCell id="e_course_sec" parent="1" style="endArrow=diamondThin;endFill=0;strokeColor=#d6b656;strokeWidth=1;" edge="1" source="section_cls" target="course_cls">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_sem_sec" parent="1" style="endArrow=diamondThin;endFill=0;strokeColor=#d6b656;strokeWidth=1;" edge="1" source="section_cls" target="semester_cls">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_enr_sec" parent="1" style="endArrow=open;endFill=0;strokeColor=#d6b656;strokeWidth=1;" edge="1" source="enrollment_cls" target="section_cls">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ GRADING SUBSYSTEM ═══ -->
+        <mxCell id="grading_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;GradingSubsystem" vertex="1">
+          <mxGeometry x="370" y="430" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="grade_cls" parent="grading_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#9673a6;" value="Grade" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="grade_a" parent="grade_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="grade_id «PK»&#xa;marks_obtained, total_marks&#xa;letter_grade, grade_points&#xa;◆ owned by Enrollment" vertex="1">
+          <mxGeometry y="22" width="190" height="73" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ ATTENDANCE SUBSYSTEM ═══ -->
+        <mxCell id="attend_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;tabWidth=130;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;AttendanceSubsystem" vertex="1">
+          <mxGeometry x="640" y="430" width="220" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="attend_cls" parent="attend_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#9673a6;" value="Attendance" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="attend_a" parent="attend_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="attendance_id «PK»&#xa;class_date, status : ENUM&#xa;marked_by (FK → faculty)&#xa;◆ owned by Enrollment" vertex="1">
+          <mxGeometry y="22" width="190" height="73" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ AUDIT SUBSYSTEM ═══ -->
+        <mxCell id="audit_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;AuditSubsystem" vertex="1">
+          <mxGeometry x="920" y="80" width="220" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="auditlog_cls" parent="audit_pkg" style="swimlane;fontStyle=1;align=center;startSize=22;html=1;fontSize=10;fillColor=#FFFFFF;strokeColor=#b85450;" value="AuditLog" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="auditlog_a" parent="auditlog_cls" style="text;html=1;fontSize=9;align=left;spacingLeft=4;verticalAlign=top;" value="log_id «PK»&#xa;table_name, record_id&#xa;action : ENUM&#xa;old_value, new_value : JSON&#xa;«populated by DB triggers»" vertex="1">
+          <mxGeometry y="22" width="190" height="98" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ ADMIN SUBSYSTEM ═══ -->
+        <mxCell id="admin_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;AdminSubsystem" vertex="1">
+          <mxGeometry x="920" y="310" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="admin_note" parent="admin_pkg" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=14;fontSize=9;align=left;spacingLeft=8;fillColor=#FFFFFF;strokeColor=#6c8ebf;" value="User mgmt, Semester config,&#xa;Section assignment,&#xa;Classroom allocation,&#xa;Institutional reports" vertex="1">
+          <mxGeometry x="15" y="40" width="190" height="65" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ FINANCE SUBSYSTEM (OOS) ═══ -->
+        <mxCell id="finance_pkg" parent="1" style="shape=folder;whiteSpace=wrap;html=1;container=1;collapsible=0;verticalAlign=top;spacingTop=10;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#999999;strokeWidth=2;dashed=1;dashPattern=8 8;fontColor=#999999;tabWidth=120;tabHeight=20;tabPosition=left;" value="«subsystem»&#xa;FinanceSubsystem&#xa;(OUT OF SCOPE — v2.0)" vertex="1">
+          <mxGeometry x="920" y="480" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══ INTER-SUBSYSTEM DEPENDENCIES ═══ -->
+        <!-- Student → Auth (inheritance) -->
+        <mxCell id="dep_stu_auth" parent="1" style="endArrow=block;endFill=0;strokeColor=#333333;strokeWidth=1;dashed=0;" edge="1" source="student_pkg" target="auth_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_stu_auth_l" parent="dep_stu_auth" style="edgeLabel;html=1;fontSize=9;fontColor=#333333;fillColor=#FFFFFF;" value="«extends»" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Faculty → Auth (inheritance) -->
+        <mxCell id="dep_fac_auth" parent="1" style="endArrow=block;endFill=0;strokeColor=#333333;strokeWidth=1;dashed=0;" edge="1" source="faculty_pkg" target="auth_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_fac_auth_l" parent="dep_fac_auth" style="edgeLabel;html=1;fontSize=9;fontColor=#333333;fillColor=#FFFFFF;" value="«extends»" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Grading → Academic (composition via Enrollment) -->
+        <mxCell id="dep_grad_acad" parent="1" style="endArrow=open;endFill=0;strokeColor=#333333;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="grading_pkg" target="academic_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_grad_acad_l" parent="dep_grad_acad" style="edgeLabel;html=1;fontSize=9;fontColor=#333333;fillColor=#FFFFFF;" value="«depends»&#xa;(via Enrollment)" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Attendance → Academic -->
+        <mxCell id="dep_att_acad" parent="1" style="endArrow=open;endFill=0;strokeColor=#333333;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="attend_pkg" target="academic_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_att_acad_l" parent="dep_att_acad" style="edgeLabel;html=1;fontSize=9;fontColor=#333333;fillColor=#FFFFFF;" value="«depends»&#xa;(via Enrollment)" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Audit → Grading (trigger) -->
+        <mxCell id="dep_aud_grad" parent="1" style="endArrow=open;endFill=0;strokeColor=#b85450;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="audit_pkg" target="grading_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_aud_grad_l" parent="dep_aud_grad" style="edgeLabel;html=1;fontSize=9;fontColor=#b85450;fillColor=#FFFFFF;" value="«triggers»" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Audit → Attendance (trigger) -->
+        <mxCell id="dep_aud_att" parent="1" style="endArrow=open;endFill=0;strokeColor=#b85450;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="audit_pkg" target="attend_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_aud_att_l" parent="dep_aud_att" style="edgeLabel;html=1;fontSize=9;fontColor=#b85450;fillColor=#FFFFFF;" value="«triggers»" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Admin → Auth -->
+        <mxCell id="dep_adm_auth" parent="1" style="endArrow=open;endFill=0;strokeColor=#333333;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="admin_pkg" target="auth_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_adm_auth_l" parent="dep_adm_auth" style="edgeLabel;html=1;fontSize=9;fontColor=#333333;fillColor=#FFFFFF;" value="«uses»" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Admin → Academic -->
+        <mxCell id="dep_adm_acad" parent="1" style="endArrow=open;endFill=0;strokeColor=#333333;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="admin_pkg" target="academic_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_adm_acad_l" parent="dep_adm_acad" style="edgeLabel;html=1;fontSize=9;fontColor=#333333;fillColor=#FFFFFF;" value="«configures»" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+        <!-- Finance (OOS) dashed -->
+        <mxCell id="dep_fin" parent="1" style="endArrow=open;endFill=0;strokeColor=#999999;strokeWidth=1;dashed=1;dashPattern=8 4;" edge="1" source="admin_pkg" target="finance_pkg">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep_fin_l" parent="dep_fin" style="edgeLabel;html=1;fontSize=9;fontColor=#999999;fillColor=#FFFFFF;" value="Future (v2.0)" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
