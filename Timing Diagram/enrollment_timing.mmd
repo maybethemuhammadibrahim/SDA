@@ -1,0 +1,34 @@
+stateDiagram-v2
+    direction LR
+
+    [*] --> active : Day 5: Student Registers<br/>(Registration Window Opens)
+
+    state "active" as active
+    state "dropped" as dropped
+    state "completed" as completed
+
+    active --> dropped : Day 60: Student Drops<br/>(Before Drop Deadline)
+    active --> completed : Day 110: Grades Processed<br/>(Grade Submission Cutoff)
+
+    dropped --> [*]
+    completed --> [*]
+
+    note right of active
+        Day 0 — Semester starts
+        Day 5 — Registration → active
+        Day 45 — Mid-semester (no change)
+        Day 60 — Drop deadline
+        Day 100–110 — Final exams and grading
+    end note
+
+    note left of dropped
+        Terminal state.
+        Student withdrew
+        before deadline.
+    end note
+
+    note left of completed
+        Terminal state.
+        System transitions after
+        grade processing.
+    end note
