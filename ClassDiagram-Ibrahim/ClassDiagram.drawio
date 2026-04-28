@@ -1,0 +1,464 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="mUPOjcN5772WNpkpxAaO" name="Page-1">
+    <mxGraphModel dx="2735" dy="1530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="User_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#f0f0f0;strokeColor=#555555;startSize=30;align=center;" value="User" vertex="1">
+          <mxGeometry height="220" width="280" x="760" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="User_attrs" parent="User_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— user_id : int&#xa;— username : string&#xa;— password : string&#xa;— role : string&#xa;— is_active : bool&#xa;— created_at : datetime" vertex="1">
+          <mxGeometry height="110" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="User_div" parent="User_title" style="line;strokeColor=#555555;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="280" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="User_methods" parent="User_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ login() : bool&#xa;+ logout() : void&#xa;+ changePassword(newPwd) : void&#xa;+ validateRole(requiredRole) : bool" vertex="1">
+          <mxGeometry height="68" width="280" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;startSize=30;align=center;" value="Student" vertex="1">
+          <mxGeometry height="260" width="310" x="260" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_attrs" parent="Student_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— student_id : int&#xa;— user_id : int&#xa;— first_name : string&#xa;— last_name : string&#xa;— email : string&#xa;— dob : date&#xa;— program : string&#xa;— batch_year : int" vertex="1">
+          <mxGeometry height="130" width="310" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_div" parent="Student_title" style="line;strokeColor=#6c8ebf;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="310" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Student_methods" parent="Student_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ registerForSection(sectionId) : Enrollment&#xa;+ dropSection(enrollmentId) : void&#xa;+ viewTranscript() : List&lt;Grade&gt;&#xa;+ viewAttendance(sectionId) : List&lt;Attendance&gt;&#xa;+ viewMarks(sectionId) : List&lt;Marks&gt;&#xa;+ downloadFeeVoucher() : List&lt;FeeVoucher&gt;" vertex="1">
+          <mxGeometry height="58" width="310" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="Faculty_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;startSize=30;align=center;" value="Faculty" vertex="1">
+          <mxGeometry height="240" width="310" x="1220" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="Faculty_attrs" parent="Faculty_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— faculty_id : int&#xa;— user_id : int&#xa;— first_name : string&#xa;— last_name : string&#xa;— email : string&#xa;— department : string&#xa;— designation : string" vertex="1">
+          <mxGeometry height="120" width="310" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Faculty_div" parent="Faculty_title" style="line;strokeColor=#82b366;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="310" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Faculty_methods" parent="Faculty_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ recordAttendance(sectionId, date, statuses) : void&#xa;+ uploadGrade(enrollmentId, marks) : Grade&#xa;+ modifyGrade(enrollmentId, marks) : Grade&#xa;+ viewTimetable(semesterId) : List&lt;CourseSection&gt;&#xa;+ uploadMaterial(sectionId, file) : void" vertex="1">
+          <mxGeometry height="82" width="310" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#fff2cc;strokeColor=#d6b656;startSize=30;align=center;" value="Course" vertex="1">
+          <mxGeometry height="185" width="270" x="40" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_attrs" parent="Course_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— course_id : int&#xa;— course_code : string&#xa;— course_name : string&#xa;— credit_hours : int" vertex="1">
+          <mxGeometry height="75" width="270" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_div" parent="Course_title" style="line;strokeColor=#d6b656;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="270" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="Course_methods" parent="Course_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ addCourse(code, name, credits) : Course&#xa;+ updateCourse(courseId, data) : void&#xa;+ listSections(semesterId) : List&lt;CourseSection&gt;" vertex="1">
+          <mxGeometry height="68" width="270" y="113" as="geometry" />
+        </mxCell>
+        <mxCell id="Semester_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#fff2cc;strokeColor=#d6b656;startSize=30;align=center;" value="Semester" vertex="1">
+          <mxGeometry height="185" width="270" x="40" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="Semester_attrs" parent="Semester_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— semester_id : int&#xa;— name : string&#xa;— start_date : date&#xa;— end_date : date&#xa;— is_active : bool" vertex="1">
+          <mxGeometry height="90" width="270" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Semester_div" parent="Semester_title" style="line;strokeColor=#d6b656;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="270" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Semester_methods" parent="Semester_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ activate() : void&#xa;+ deactivate() : void&#xa;+ setRegistrationDeadline(date) : void" vertex="1">
+          <mxGeometry height="53" width="270" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="CourseSection_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#e1d5e7;strokeColor=#9673a6;startSize=30;align=center;" value="CourseSection" vertex="1">
+          <mxGeometry height="200" width="300" x="450" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="CourseSection_attrs" parent="CourseSection_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— section_id : int&#xa;— course_id : int&#xa;— semester_id : int&#xa;— faculty_id : int&#xa;— section_code : string&#xa;— max_capacity : int" vertex="1">
+          <mxGeometry height="108" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CourseSection_div" parent="CourseSection_title" style="line;strokeColor=#9673a6;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="300" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="CourseSection_methods" parent="CourseSection_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ checkCapacity() : bool&#xa;+ assignFaculty(facultyId) : void&#xa;+ getRoster() : List&lt;Student&gt;" vertex="1">
+          <mxGeometry height="50" width="300" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="Enrollment_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#f8cecc;strokeColor=#b85450;startSize=30;align=center;" value="Enrollment" vertex="1">
+          <mxGeometry height="185" width="300" x="440" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="Enrollment_attrs" parent="Enrollment_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— enrollment_id : int&#xa;— student_id : int&#xa;— section_id : int&#xa;— enrolled_at : datetime&#xa;— status : string" vertex="1">
+          <mxGeometry height="108" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Enrollment_div" parent="Enrollment_title" style="line;strokeColor=#b85450;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="300" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="Enrollment_methods" parent="Enrollment_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ enroll() : void&#xa;+ drop() : void&#xa;+ markCompleted() : void" vertex="1">
+          <mxGeometry height="35" width="300" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="Attendance_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;startSize=30;align=center;" value="Attendance" vertex="1">
+          <mxGeometry height="200" width="300" x="970" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="Attendance_attrs" parent="Attendance_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— attendance_id : int&#xa;— enrollment_id : int&#xa;— class_date : date&#xa;— status : string&#xa;— marked_by : int" vertex="1">
+          <mxGeometry height="110" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Attendance_div" parent="Attendance_title" style="line;strokeColor=#6c8ebf;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Attendance_methods" parent="Attendance_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ mark(status) : void&#xa;+ modify(status) : void&#xa;+ getMonthlyReport(enrollmentId) : map" vertex="1">
+          <mxGeometry height="48" width="300" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;startSize=30;align=center;" value="Grade" vertex="1">
+          <mxGeometry height="200" width="300" x="970" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_attrs" parent="Grade_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— grade_id : int&#xa;— enrollment_id : int&#xa;— marks_obtained : float&#xa;— total_marks : float&#xa;— letter_grade : string&#xa;— grade_points : float" vertex="1">
+          <mxGeometry height="110" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_div" parent="Grade_title" style="line;strokeColor=#82b366;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Grade_methods" parent="Grade_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ compute(marks, total) : string&#xa;+ update(newMarks) : void&#xa;+ getGradePoints() : float" vertex="1">
+          <mxGeometry height="48" width="300" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="AuditLog_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#f5f5f5;strokeColor=#666666;startSize=30;align=center;" value="AuditLog" vertex="1">
+          <mxGeometry height="215" width="310" x="1510" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="AuditLog_attrs" parent="AuditLog_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— log_id : int&#xa;— table_name : string&#xa;— record_id : int&#xa;— action : string&#xa;— old_value : string&#xa;— new_value : string&#xa;— changed_by : int&#xa;— changed_at : datetime" vertex="1">
+          <mxGeometry height="138" width="310" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AuditLog_div" parent="AuditLog_title" style="line;strokeColor=#666666;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="310" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="AuditLog_methods" parent="AuditLog_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;fontStyle=2;" value="+ logChange() : void  «populated by DB triggers»" vertex="1">
+          <mxGeometry height="35" width="310" y="176" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#fad9d5;strokeColor=#ae4132;startSize=30;align=center;" value="Administrator" vertex="1">
+          <mxGeometry height="180" width="280" x="1900" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_attrs" parent="Admin_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— admin_id : int&#xa;— office_location : string" vertex="1">
+          <mxGeometry height="50" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_div" parent="Admin_title" style="line;strokeColor=#ae4132;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="280" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Admin_methods" parent="Admin_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ manageAccount() : void&#xa;+ configSemester() : void&#xa;+ assignFaculty() : void&#xa;+ allocateRoom() : void&#xa;+ generateReport() : Report" vertex="1">
+          <mxGeometry height="90" width="280" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_admin" edge="1" parent="1" source="Admin_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;strokeColor=#555555;strokeWidth=2;" target="User_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_admin_lbl" connectable="0" parent="gen_admin" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«extends»" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Advisor_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;startSize=30;align=center;" value="AcademicAdvisor" vertex="1">
+          <mxGeometry height="150" width="320" x="1900" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Advisor_attrs" parent="Advisor_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— advisor_id : int&#xa;— is_hod : bool" vertex="1">
+          <mxGeometry height="40" width="320" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Advisor_div" parent="Advisor_title" style="line;strokeColor=#82b366;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="320" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Advisor_methods" parent="Advisor_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ approveRegistration(enrollmentId) : void&#xa;+ grantOverride(studentId, courseId) : void&#xa;+ resolveTimetableConflict() : void" vertex="1">
+          <mxGeometry height="70" width="320" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_advisor" edge="1" parent="1" source="Advisor_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;strokeColor=#555555;strokeWidth=2;" target="Faculty_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_advisor_lbl" connectable="0" parent="gen_advisor" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«extends»" vertex="1">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Timer_title" parent="1" style="swimlane;fontStyle=1;fontSize=13;fillColor=#f0f0f0;strokeColor=#555555;startSize=30;align=center;" value="SystemTimer" vertex="1">
+          <mxGeometry height="160" width="280" x="1900" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="Timer_attrs" parent="Timer_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="— schedule_config : string&#xa;— last_run : datetime" vertex="1">
+          <mxGeometry height="40" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Timer_div" parent="Timer_title" style="line;strokeColor=#555555;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="10" width="280" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Timer_methods" parent="Timer_title" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" value="+ lockRegistration() : void&#xa;+ sendAttendanceAlerts() : void&#xa;+ computeBatchGPA() : void&#xa;+ runDailyBackup() : void" vertex="1">
+          <mxGeometry height="80" width="280" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="trig_timer_sem" edge="1" parent="1" source="Timer_title" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=#666666;strokeWidth=1.5;" target="Semester_title" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="610" />
+              <mxPoint x="1100" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="trig_timer_sem_lbl" connectable="0" parent="trig_timer_sem" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«triggers»" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gen_student" edge="1" parent="1" source="Student_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;strokeColor=#555555;strokeWidth=2;" target="User_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_student_lbl" connectable="0" parent="gen_student" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«extends»" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gen_faculty" edge="1" parent="1" source="Faculty_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;strokeColor=#555555;strokeWidth=2;" target="User_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_faculty_lbl" connectable="0" parent="gen_faculty" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«extends»" vertex="1">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_course_cs" edge="1" parent="1" source="Course_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#d6b656;strokeWidth=1.5;" target="CourseSection_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc_course_cs_src" connectable="0" parent="assoc_course_cs" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_course_cs_tgt" connectable="0" parent="assoc_course_cs" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_course_cs_lbl" connectable="0" parent="assoc_course_cs" style="edgeLabel;fontSize=11;fontStyle=0;align=center;fillColor=none;strokeColor=none;" value="offers" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_sem_cs" edge="1" parent="1" source="Semester_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#d6b656;strokeWidth=1.5;" target="CourseSection_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc_sem_cs_src" connectable="0" parent="assoc_sem_cs" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_sem_cs_tgt" connectable="0" parent="assoc_sem_cs" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_sem_cs_lbl" connectable="0" parent="assoc_sem_cs" style="edgeLabel;fontSize=11;fontStyle=0;align=center;fillColor=none;strokeColor=none;" value="hosts" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_fac_cs" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;strokeColor=#82b366;strokeWidth=1.5;entryX=1;entryY=0.672;entryDx=0;entryDy=0;entryPerimeter=0;" target="CourseSection_attrs" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1385" y="743" />
+              <mxPoint x="880" y="743" />
+            </Array>
+            <mxPoint x="1385" y="527.5" as="sourcePoint" />
+            <mxPoint x="740" y="758" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_fac_cs_src" connectable="0" parent="assoc_fac_cs" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_fac_cs_tgt" connectable="0" parent="assoc_fac_cs" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_fac_cs_lbl" connectable="0" parent="assoc_fac_cs" style="edgeLabel;fontSize=11;fontStyle=0;align=center;fillColor=none;strokeColor=none;" value="teaches" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_cs_enroll" edge="1" parent="1" source="Enrollment_title" style="edgeStyle=orthogonalEdgeStyle;startArrow=ERmanyToOne;startFill=0;endArrow=diamond;endFill=0;endSize=12;strokeColor=#9673a6;strokeWidth=1.5;" target="CourseSection_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="agg_cs_enroll_src" connectable="0" parent="agg_cs_enroll" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_cs_enroll_tgt" connectable="0" parent="agg_cs_enroll" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_cs_enroll_lbl" connectable="0" parent="agg_cs_enroll" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="◇ roster (aggregation)" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_stu_enroll" edge="1" parent="1" source="Student_title" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=0;endSize=12;strokeColor=#6c8ebf;strokeWidth=1.5;" target="Enrollment_title" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="440" />
+              <mxPoint x="860" y="980" />
+              <mxPoint x="650" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_stu_enroll_src" connectable="0" parent="agg_stu_enroll" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_stu_enroll_tgt" connectable="0" parent="agg_stu_enroll" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="agg_stu_enroll_lbl" connectable="0" parent="agg_stu_enroll" style="edgeLabel;fontSize=11;fontStyle=0;align=center;fillColor=none;strokeColor=none;" value="enrolls in" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_enroll_att" edge="1" parent="1" source="Enrollment_title" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startFill=1;startSize=12;endArrow=open;endFill=0;strokeColor=#b85450;strokeWidth=1.5;" target="Attendance_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="comp_enroll_att_src" connectable="0" parent="comp_enroll_att" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_enroll_att_tgt" connectable="0" parent="comp_enroll_att" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="*" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_enroll_att_lbl" connectable="0" parent="comp_enroll_att" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="◆ cascade delete" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_enroll_grade" edge="1" parent="1" source="Enrollment_title" style="edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startFill=1;startSize=12;endArrow=open;endFill=0;strokeColor=#b85450;strokeWidth=1.5;" target="Grade_title" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="comp_enroll_grade_src" connectable="0" parent="comp_enroll_grade" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_enroll_grade_tgt" connectable="0" parent="comp_enroll_grade" style="edgeLabel;fontSize=12;fontStyle=1;align=center;fillColor=none;strokeColor=none;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="0.85" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comp_enroll_grade_lbl" connectable="0" parent="comp_enroll_grade" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="◆ cascade delete" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_audit_grade" edge="1" parent="1" source="AuditLog_title" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=#666666;strokeWidth=1.5;" target="Grade_title" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1685" y="1000" />
+              <mxPoint x="1260" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_audit_grade_lbl" connectable="0" parent="assoc_audit_grade" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«triggers» tracks" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_audit_att" edge="1" parent="1" source="AuditLog_title" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;strokeColor=#666666;strokeWidth=1.5;" target="Attendance_title" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1685" y="1000" />
+              <mxPoint x="1340" y="1000" />
+              <mxPoint x="1340" y="1210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc_audit_att_lbl" connectable="0" parent="assoc_audit_att" style="edgeLabel;fontSize=11;fontStyle=2;align=center;fillColor=none;strokeColor=none;" value="«triggers» tracks" vertex="1">
+          <mxGeometry relative="1" x="0.3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bce_title" parent="1" style="text;html=1;fontSize=14;fontStyle=1;align=center;" value="BCE (Boundary–Control–Entity) Model" vertex="1">
+          <mxGeometry height="30" width="760" x="530" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_h1" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" value="Boundary (UI / View)" vertex="1">
+          <mxGeometry height="30" width="240" x="530" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_h2" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="Control (Logic / Controller)" vertex="1">
+          <mxGeometry height="30" width="270" x="775" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_h3" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="Entity (Data / Model)" vertex="1">
+          <mxGeometry height="30" width="240" x="1050" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r1b" parent="1" style="text;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="LoginForm" vertex="1">
+          <mxGeometry height="28" width="240" x="530" y="1430" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r1c" parent="1" style="text;html=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="AuthController" vertex="1">
+          <mxGeometry height="28" width="270" x="775" y="1430" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r1e" parent="1" style="text;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="User" vertex="1">
+          <mxGeometry height="28" width="240" x="1050" y="1430" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r2b" parent="1" style="text;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="CourseRegistrationForm" vertex="1">
+          <mxGeometry height="28" width="240" x="530" y="1462" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r2c" parent="1" style="text;html=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="EnrollmentController" vertex="1">
+          <mxGeometry height="28" width="270" x="775" y="1462" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r2e" parent="1" style="text;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="Student, CourseSection, Enrollment" vertex="1">
+          <mxGeometry height="28" width="240" x="1050" y="1462" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r3b" parent="1" style="text;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="AttendanceForm" vertex="1">
+          <mxGeometry height="28" width="240" x="530" y="1494" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r3c" parent="1" style="text;html=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="AttendanceController" vertex="1">
+          <mxGeometry height="28" width="270" x="775" y="1494" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r3e" parent="1" style="text;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="Enrollment, Attendance" vertex="1">
+          <mxGeometry height="28" width="240" x="1050" y="1494" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r4b" parent="1" style="text;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="GradeEntryForm" vertex="1">
+          <mxGeometry height="28" width="240" x="530" y="1526" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r4c" parent="1" style="text;html=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="GradeController" vertex="1">
+          <mxGeometry height="28" width="270" x="775" y="1526" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r4e" parent="1" style="text;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="Enrollment, Grade" vertex="1">
+          <mxGeometry height="28" width="240" x="1050" y="1526" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r5b" parent="1" style="text;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="AdminDashboard" vertex="1">
+          <mxGeometry height="28" width="240" x="530" y="1558" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r5c" parent="1" style="text;html=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="AdminController, AuditController" vertex="1">
+          <mxGeometry height="28" width="270" x="775" y="1558" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r5e" parent="1" style="text;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="User, Semester, CourseSection, AuditLog" vertex="1">
+          <mxGeometry height="28" width="240" x="1050" y="1558" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r6b" parent="1" style="text;html=1;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" value="SystemSchedulerService" vertex="1">
+          <mxGeometry height="28" width="240" x="530" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r6c" parent="1" style="text;html=1;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" value="SystemTimer" vertex="1">
+          <mxGeometry height="28" width="270" x="775" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="bce_r6e" parent="1" style="text;html=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" value="Semester, Attendance, Grade" vertex="1">
+          <mxGeometry height="28" width="240" x="1050" y="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_title" parent="1" style="text;html=1;fontSize=13;fontStyle=1;" value="Relationship Legend" vertex="1">
+          <mxGeometry height="28" width="200" x="45" y="1061" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_gen" parent="1" style="text;html=1;fontSize=11;" value="——▷  Generalization (extends)" vertex="1">
+          <mxGeometry height="22" width="250" x="45" y="1093" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_assoc" parent="1" style="text;html=1;fontSize=11;" value="——→  Association" vertex="1">
+          <mxGeometry height="22" width="250" x="45" y="1118" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_agg" parent="1" style="text;html=1;fontSize=11;" value="——◇  Aggregation (shared)" vertex="1">
+          <mxGeometry height="22" width="250" x="45" y="1143" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_comp" parent="1" style="text;html=1;fontSize=11;" value="——◆  Composition (cascade delete)" vertex="1">
+          <mxGeometry height="22" width="260" x="45" y="1168" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_trig" parent="1" style="text;html=1;fontSize=11;" value="- - →  Trigger / dependency" vertex="1">
+          <mxGeometry height="22" width="250" x="45" y="1193" as="geometry" />
+        </mxCell>
+        <mxCell id="Zyojn4XxJQN-jwck1cbD-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;v.2 will include a finance officer class&lt;/div&gt;&lt;div&gt;as mentioned in usecase diagram&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="130" x="440" y="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
